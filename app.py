@@ -35,10 +35,10 @@ client = get_client()
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_pickle("data/sentence_embeddings.pkl")
+        df = pd.read_pickle("sentence_embeddings.pkl")
         return df
     except FileNotFoundError:
-        st.error("data/sentence_embeddings.pkl not found. Please run the notebook first to generate embeddings.")
+        st.error("sentence_embeddings.pkl not found. Please run the notebook first to generate embeddings.")
         st.stop()
 
 df = load_data()
